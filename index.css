@@ -1,0 +1,165 @@
+html,
+body,
+header,
+article,
+footer,
+div,
+ul,
+li,
+h1,
+p,
+span {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #3867d6;
+}
+
+ul, li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 0 0;
+    margin: 0 auto;
+    overflow-y: auto;
+}
+
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    background-color: #3867d6;
+    z-index: 999;
+}
+
+/*  */
+
+.header {
+    width: 100%;
+    text-align: center;
+}
+
+.header>h1 {
+    position: relative;
+    width: 2rem;
+    margin: 0 auto;
+    font-size: 0.16rem;
+    color: #fff;
+}
+.header p {
+    position: absolute;
+    right: 0;
+    top: 45%;
+    line-height: 0.15rem;
+    font-size: 0.12rem;
+    color: #fff;
+}
+
+.time-line {
+    position: relative;
+    width: 100%;
+    padding-bottom: 0.1rem;
+}
+
+
+.line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 0.05rem;
+    height: 100%;
+    background-color: #45aaf2;
+}
+
+.line-item {
+    position: relative;
+    width: 44%;
+    padding: 0.15rem 0.05rem;
+    margin-top: 0.2rem;
+    background-color: #45aaf2;
+    border: 1px solid #efefef;
+    border-radius: 0.08rem;
+}
+
+.line-item.left {
+    margin-right: 52%;
+    text-align: right;
+    margin-left: 1%;
+}
+
+.line-item.right {
+    margin-left: 55%;
+    margin-right: 1%;
+}
+
+.line-item.left .crl{
+    right: -0.3rem;
+    top: 0rem;
+}
+
+.line-item.right .crl{
+    left: -0.3rem;
+    top: 0rem;
+}
+
+.line-item .crl {
+    position: absolute;
+    width: 0.2rem;
+    height: 0.2rem;
+    background-color: #45aaf2;
+    border-radius: 50%;
+}
+
+.line-item .crl::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 50%;
+    width: 0.1rem;
+    height: 0.1rem;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.line-item > p {
+    margin-bottom: 0.05rem;
+    font-size: 0.12rem;
+}
+
+.line-item > p:last-child {
+    margin-bottom: 0px;
+}
+
+.line-item .time {
+    font-size: 0.12rem;
+    font-weight: bold;
+}
+
+.line-item .incident> span{
+    font-weight: bold;
+}
+
+.line-item .version > span {
+    font-weight: bold;
+}

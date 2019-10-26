@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="bitbug_favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <title>买拍优品</title>
+    <script>
+        setNowFontSize();
+        function setNowFontSize() {
+            var StandardWidth = 375;
+            var StandardFontSize = 100;
+            var nowWidth = document.documentElement.offsetWidth;
+            var nowFontSize = nowWidth / StandardWidth * StandardFontSize;
+            nowFontSize = nowFontSize > 100 ? 100 : nowFontSize
+            document.documentElement.style.fontSize = nowFontSize + 'px';
+        }
+        window.addEventListener('resize', setNowFontSize);
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <h1>买拍优品 <p>--大事记</p></h1>
+    </header>
+    <div class="container">
+        <ul id="list" class="time-line"></ul>
+    </div>
+
+    <script>
+        var listData = [
+            {
+                down_time: '2019-10-25 10:41',
+                up_time: '2019-10-25 10:27',
+                version: '1.0.511',
+                desc: '优化优品商品页面列表加载 提升体验'
+            },
+            {
+                down_time: '2019-10-23 22:14',
+                up_time: '2019-10-23 21:49',
+                version: '1.0.510',
+                desc: '优品页面升级 修改商品展示布局 增加多类目'
+            },
+            {
+                down_time: '2019-10-18 13:12',
+                up_time: '2019-10-18 09:50',
+                version: '1.0.509',
+                desc: '优化所有列表上拉加载方式'
+            },
+            {
+                down_time: '2019-10-17 14:51',
+                up_time: '2019-10-17 14:23',
+                version: '1.0.508',
+                desc: '优品页面加入排序功能'
+            },
+            {
+                down_time: '2019-10-15 18:30',
+                up_time: '2019-10-15 17:10',
+                version: '1.0.507',
+                desc: '免费领 优品页面 加入 买拍优品 推广规则入口'
+            },
+            {
+                down_time: '2019-10-14 17:32',
+                up_time: '2019-10-14 17:19',
+                version: '1.0.506',
+                desc: '分享海报加入分享人昵称'
+            },
+            {
+                down_time: '2019-10-12 12:30',
+                up_time: '2019-10-12 12:01',
+                version: '1.0.505',
+                desc: '优化支付商品填写地址操作逻辑'
+            },
+            {
+                down_time: '2019-10-12 10:15',
+                up_time: '2019-10-12 09:47',
+                version: '1.0.504',
+                desc: '新增升级vip页面'
+            },
+            {
+                down_time: '2019-10-11 18:20',
+                up_time: '2019-10-11 18:00',
+                version: '1.0.503',
+                desc: '我的页面加入积分显示 新增荣耀vip'
+            },
+            {
+                down_time: '2019-10-11 14:42',
+                up_time: '2019-10-11 12:08',
+                version: '1.0.502',
+                desc: '我的页面推广按钮 区分商品推广 和 小程序推广'
+            },
+            {
+                down_time: '2019-10-11 10:46',
+                up_time: '2019-10-11 10:23',
+                version: '1.0.501',
+                desc: '校队分享海报再ipad的显示不全的问题'
+            },
+            {
+                down_time: '2019-10-10 18:20',
+                up_time: '2019-10-10 16:29',
+                version: '1.0.5',
+                desc: '更换海报 重写海报生成方式 优化代码'
+            },
+            {
+                down_time: '2019-10-09 17:25',
+                up_time: '2019-10-09 17:17',
+                version: '1.0.452',
+                desc: '优化代码 提升体验'
+            },
+            {
+                down_time: '2019-10-09 12:55',
+                up_time: '2019-10-09 11:12',
+                version: '1.0.451',
+                desc: '修改一些隐形bug'
+            },
+            {
+                down_time: '2019-10-08 19:03',
+                up_time: '2019-10-08 18:03',
+                version: '1.0.45',
+                desc: '订单支付页面添加备注 商品规格备注'
+            },
+            {
+                down_time: '2019-10-08 14:04',
+                up_time: '2019-10-08 11:28',
+                version: '1.0.44',
+                desc: '优化页面的加载 添加骨架屏'
+            },
+            {
+                down_time: '2019-10-02 16:30',
+                up_time: '2019-10-02 14:15',
+                version: '1.0.43',
+                desc: '优化代码'
+            },
+            {
+                down_time: '2019-09-29 17:08',
+                up_time: '2019-09-29 16:08',
+                version: '1.0.42',
+                desc: '提前完成购物车 下单前规格选择交互 待调试'
+            },
+            {
+                down_time: '2019-09-29 20:46',
+                up_time: '2019-09-29 19:06',
+                version: '1.0.41',
+                desc: '加入分享小程序海报'
+            },
+            {
+                down_time: '2019-09-27 17:55',
+                up_time: '2019-09-27 15:58',
+                version: '1.0.4',
+                desc: '加入分享小程序海报'
+            },
+            {
+                down_time: '2019-09-27 14:04',
+                up_time: '2019-09-27 12:21',
+                version: '1.0.3',
+                desc: '地址操作添加 修复部分隐式bug'
+            },
+            {
+                down_time: '2019-09-27 09:08',
+                up_time: '2019-09-26 22:30',
+                version: '1.0.2',
+                desc: '修改部分微信规则敏感字段'
+            },
+            {
+                down_time: '2019-09-27 11:53',
+                up_time: '2019-09-26 11:27',
+                version: '1.0.1',
+                desc: '完成微信支付 小程序正式上线'
+            },
+            {
+                down_time: '2019-09-24 11:39',
+                up_time: '2019-09-20 20:26',
+                version: '1.0.0',
+                desc: '初次提交审核 微信支付待申请'
+            }
+        ]
+        var list = document.getElementById('list')
+        var str = '<div class="line"></div>'
+        // 遍历数据
+        for(var i = 0; i < listData.length; i++) {
+            str += `
+                <li class="line-item ${i%2==0?'left':'right'}">
+                    <div class="crl"></div>
+                    <p class="time">提审: ${listData[i].up_time}</p>
+                    <p class="time">发布: ${listData[i].down_time}</p>
+                    <p class="version">版本：<span>${listData[i].version}</span></p>
+                    <p class="desc">${listData[i].desc}</p>
+                </li>
+            `
+        }
+        list.innerHTML = str
+    </script>
+</body>
+</html>
